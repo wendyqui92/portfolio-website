@@ -12,6 +12,7 @@ h1, h2 {
   font-family: 'Playfair Display SC', serif;
   font-size: 2.75em;
   color: #692B38;
+  text-align: center;
 }
 
 h3 {
@@ -20,11 +21,16 @@ h3 {
   line-height: 1.6;
 }
 
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 header {
   background-color: #F2F3F4;
-  text-align: center;
   padding: 25px 0;
-  margin: 10px;
+  margin: -10px;
   box-shadow: 0px 7px 28px 0px rgba(50, 50, 50, 0.49);
   position: fixed;
   width: 100%;
@@ -72,11 +78,14 @@ a:active {
   padding: 10px 20px 10px 20px;
   border: solid #000000 2px;
   text-decoration: none;
+  transition-duration: 0.2s;
+  transition-property: opacity;
 }
 
 .button:hover {
   background: #bcbcbc;
   text-decoration: none;
+  opacity: 0.8;
 }
 
 .button.contact {
@@ -99,7 +108,9 @@ a:active {
 
 /*Layout styling*/
 .container {
-  padding: 0 15px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .row {
@@ -152,10 +163,109 @@ nav>ul>li>a:visited {
 #hero {
   background-color: #F2F3F4;
   padding: 20px 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
   display: inline-block;
   width: 100%;
+  text-align: center;
+}
+
+#hero span {
+  display: block;
 }
 
 main {
   padding-top: 133px;
+  margin-left: -20px margin-right: -20px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+}
+
+.about-picture {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes color-change {
+  0% {fill: #edc655;}
+  50% {fill: #fcffad;}
+  100% {fill: #f76414;}
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {transform: translate(0,50px);}
+  to {transform: translate(200px,50px);}
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {transform: translate(446px,48px);}
+  to {transform: translate(100px, 48px);}
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+
+/* ==============================
+Medium devices (640px and larger)
+================================= */
+@media only screen and (min-width: 640px) {
+  header {
+    text-align: unset;
+    padding: 20px 0 13px;
+    padding-top: 99px;
+  }
+
+  nav {
+    width: auto;
+    float: right;
+    margin-top: 4px;
+  }
+
+  .col-md-6 {
+    width: 50%;
+  }
+}
+
+/* ==============================
+Large devices (1024px or larger)
+================================= */
+@media only screen and (min-width: 1024px) {}
+
+.col-md-6 {
+  width: 50%;
+}
+
+============================X-large devices (1440px or larger)=================================*/ @media only screen and (min-width: 1440px) {}
+
+.col-md-6 {
+  width: 50%;
+}
+
+/* ==============================
+Extra-large devices (1920px or larger)
+================================= */
+@media only screen and (min-width: 1920px) {}
+
+.col-md-6 {
+  width: 50%;
 }
