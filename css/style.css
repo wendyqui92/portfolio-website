@@ -1,93 +1,124 @@
-/*
-Colors used
-Primary color : #000000; (0,0,0) Black
-Secondary color: #692B38; (105, 43, 56) Maroon
-Secondary color: #bcbcbc; (188, 188, 188) Gray
+/*-------------------------------------------Start Section---------------------------------------------*/
 
-Fonts
-Headers: Playfair Display
-Body: Inter
-*/
-h1, h2 {
+/*setting the default width of an element to include the padding and the border via the box-sizing property and border-box value*/
+* {
+  box-sizing: border-box;
+}
+
+/*--------------------------------------------End Section---------------------------------------------*/
+/*-------------------------------------------Start Section---------------------------------------------*/
+/*default body settings*/
+
+body {
+  background-color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px; /* Sets the font size to 16px */
+  font-weight: 300; /* Sets the font weight to 300 */
+  line-height: 1.6; /* Sets the line-height to 1.6 * the font-size */
+  color: #000000;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.4;
+}
+
+h1 {
   font-family: 'Playfair Display SC', serif;
   font-size: 2.75em;
-  color: #692B38;
+  font-weight: 700;
   text-align: center;
+  color: #692B38;
+}
+
+h2 {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2.25em;
+  font-weight: 700;
+  text-align: left;
+  color: #692B38;
 }
 
 h3 {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  margin-top: -5px;
+}
+
+#about-page h3 { margin-top: 0;}
+
+h4 {
+  font-size: 1.35em;
+  font-weight: 400;
 }
 
 p {
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
 
-header {
-  background-color: #F2F3F4;
-  padding: 25px 0;
-  margin: -10px;
-  box-shadow: 0px 7px 28px 0px rgba(50, 50, 50, 0.49);
-  position: fixed;
-  width: 100%;
-}
-
+/*setting images to full-width*/
 img {
   width: 100%;
 }
 
+/*change the default link color to your primary color (copied from your comments at the top of the document)*/
 a {
   color: #000000;
-  text-decoration: none;
-  /* No underlining */
+  text-decoration: none; /* No underlining */
 }
-
-a:visited {
-  /* visited link */
-  color: #000000;
-}
-
 a:hover {
   color: #692B38;
+  text-decoration: none; /* Underlining when hovering over a link */
+}
+
+/*style the current nav item green*/
+/*
+.active a {
+    color: #000000;
+    text-decoration: underline;
+}
+*/
+
+a:active { /* selected link */
+  color: green;
+}
+
+/*Pseudo classes for Accessibility for Across the Web*/
+/*
+a:hover,
+a:focus {
+  color: green;
   text-decoration: none;
-  /* Underlining when hovering over a link */
 }
+*/
 
-a:active {
-  /* selected link */
-  color: #000000;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/*CSS code for the button class*/
 .button {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   display: inline-block;
-  border-radius: 0px;
-  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
   color: #000000;
-  font-size: 16px;
-  background: #ffffff;
-  padding: 10px 20px 10px 20px;
-  border: solid #000000 2px;
+  font-weight: 400;
   text-decoration: none;
-  transition-duration: 0.2s;
-  transition-property: opacity;
+  padding: 10px;
+  border-radius: 3px;
+  border: 2px solid #994c30;
+  transition: 0.8s opacity;
 }
 
 .button:hover {
-  background: #bcbcbc;
-  text-decoration: none;
   opacity: 0.8;
+  color: #bcbcbc;
+  text-decoration: none;
 }
 
+/*
+.button:active {
+  opacity: 0.8; /* Reduces the opacity of the button to 80%
+  text-decoration: none;
+}
+*/
+
+/*button rules for the mailto button*/
 .button.contact {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -101,96 +132,111 @@ a:active {
   text-decoration: none;
 }
 
+/*button class hover and active state*/
+
 .button.contact:hover {
-  background: #bcbcbc;
-  text-decoration: none;
+  color: #bcbcbc;
 }
 
-/*Layout styling*/
-.container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/*--------------------------------------------End Section---------------------------------------------*/
+/*-------------------------------------------Start Section---------------------------------------------*/
+/*stye the page sections*/
 
-.row {
-  margin: 25px 0;
-  /* 25px top and bottom, 0 left and right */
-}
-
-#work .row {
-  padding-bottom: 25px;
-  border-bottom: 1px solid #4a4a4a;
-}
-
-#hero h1 {
+/*style the <header> element*/
+header {
+  background-color: #F2F3F4;
   text-align: center;
-  /* Centers text */
+  padding: 10px 0;
+  position: relative;
+  box-shadow:rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.center {
-  text-align: center;
-}
-
-.logo {
+/*style the logo*/
+header .logo {
   max-width: 250px;
-  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-nav>ul {
+/*Navigation Styling*/
+nav {
+  display: inline-block;
+}
+
+nav > ul {
   list-style-type: none;
   padding: 0;
 }
 
-nav>ul>li {
+nav > ul > li {
   display: inline-block;
 }
 
-nav>ul>li>a {
+nav > ul > li > a {
   padding: 0 15px;
   text-transform: uppercase;
   font-weight: 700;
   color: #4a4a4a;
 }
 
-nav>ul>li>a:visited {
-  padding: 0 15px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #692B38;
-}
+
 
 #hero {
   background-color: #F2F3F4;
-  padding: 20px 0;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding: 40px 0;
   display: inline-block;
   width: 100%;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 #hero span {
   display: block;
 }
 
-main {
-  padding-top: 133px;
-  margin-left: -20px margin-right: -20px;
+#contact {
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+
+/*Style the social icons*/
+
+.social {
+  list-style-type: none;
+  padding: 0;
+  margin-left: -10px;
 }
 
-[class*="col-"] {
-  float: left;
-  padding: 10px;
+.social li {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
-.about-picture {
+.social img {
+  height: 64px;
+  width: 64px;
+}
+
+/*--------------------------------------------End Section---------------------------------------------*/
+/*-------------------------------------------Start Section---------------------------------------------*/
+/* Layout styling */
+
+.container {
+  padding: 0 15px;
+}
+
+.row {
+  margin: 25px 0; /* 25px top and bottom, 0 left and right */
+  /*border-bottom: 1px solid #4a4a4a;*/
+}
+
+#work .row { padding-bottom: 20px; }
+
+/*--------------------------------------------End Section---------------------------------------------*/
+/*-------------------------------------------Start Section---------------------------------------------*/
+/*SVG anamation*/
+.svg-animation {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -203,8 +249,18 @@ main {
 }
 
 .sun {
+  animation-duration: 4s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+/*single line...
+.sun {
   animation: 4s color-change infinite alternate linear;
 }
+*/
 
 @keyframes cloud-move {
   from {transform: translate(0,50px);}
@@ -212,8 +268,18 @@ main {
 }
 
 .cloud-front {
+  animation-duration: 30s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+/*single line...
+.cloud-front {
   animation: 30s cloud-move infinite alternate linear;
 }
+*/
 
 @keyframes cloud-move-reverse {
   from {transform: translate(446px,48px);}
@@ -223,49 +289,81 @@ main {
 .cloud-back {
   animation: 34s cloud-move-reverse infinite alternate linear;
 }
+/*--------------------------------------------End Section---------------------------------------------*/
+/*-------------------------------------------Start Section---------------------------------------------*/
+/*Media Queries*/
 
+/*clear page flow*/
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*float all columns left*/
+[class*="col-"] {
+  padding: 10px;
+}
 
 /* ==============================
 Medium devices (640px and larger)
 ================================= */
 @media only screen and (min-width: 640px) {
+  body {
+    font-size: 18px;
+  }
+
   header {
     text-align: unset;
     padding: 20px 0 13px;
-    padding-top: 99px;
   }
 
   nav {
     width: auto;
     float: right;
-    margin-top: 4px;
   }
 
   .col-md-6 {
     width: 50%;
+    float: left;
+    padding-bottom: 40px;
   }
+
 }
+
 
 /* ==============================
 Large devices (1024px or larger)
 ================================= */
-@media only screen and (min-width: 1024px) {}
+@media only screen and (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .col-lg-7 {
+    width: 60%;
+  }
 
-.col-md-6 {
-  width: 50%;
-}
+  .col-lg-5 {
+    width: 40%;
+  }
 
-============================X-large devices (1440px or larger)=================================*/ @media only screen and (min-width: 1440px) {}
+  .col-lg-7 {
+    width: 60%;
+    float: left;
+    padding-bottom: 40px;
+  }
+  .col-lg-8 {
+    width: 40%;
+    float: right;
+  }
 
-.col-md-6 {
-  width: 50%;
+   #about-page .col-md-6 {
+     width: 100%;
+  }
 }
 
 /* ==============================
 Extra-large devices (1920px or larger)
 ================================= */
-@media only screen and (min-width: 1920px) {}
-
-.col-md-6 {
-  width: 50%;
-}
