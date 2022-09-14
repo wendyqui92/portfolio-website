@@ -1,5 +1,4 @@
 /*-------------------------------------------Start Section---------------------------------------------*/
-
 /*setting the default width of an element to include the padding and the border via the box-sizing property and border-box value*/
 * {
   box-sizing: border-box;
@@ -8,13 +7,15 @@
 /*--------------------------------------------End Section---------------------------------------------*/
 /*-------------------------------------------Start Section---------------------------------------------*/
 /*default body settings*/
-
 body {
   background-color: #ffffff;
   font-family: 'Lato', sans-serif;
-  font-size: 16px; /* Sets the font size to 16px */
-  font-weight: 300; /* Sets the font weight to 300 */
-  line-height: 1.6; /* Sets the line-height to 1.6 * the font-size */
+  font-size: 16px;
+  /* Sets the font size to 16px */
+  font-weight: 300;
+  /* Sets the font weight to 300 */
+  line-height: 1.6;
+  /* Sets the line-height to 1.6 * the font-size */
   color: #000000;
 }
 
@@ -44,7 +45,9 @@ h3 {
   margin-top: -5px;
 }
 
-#about-page h3 { margin-top: 0;}
+#about-page h3 {
+  margin-top: 0;
+}
 
 h4 {
   font-size: 1.35em;
@@ -64,11 +67,14 @@ img {
 /*change the default link color to your primary color (copied from your comments at the top of the document)*/
 a {
   color: #000000;
-  text-decoration: none; /* No underlining */
+  text-decoration: none;
+  /* No underlining */
 }
+
 a:hover {
   color: #692B38;
-  text-decoration: none; /* Underlining when hovering over a link */
+  text-decoration: none;
+  /* Underlining when hovering over a link */
 }
 
 /*style the current nav item green*/
@@ -78,8 +84,8 @@ a:hover {
     text-decoration: underline;
 }
 */
-
-a:active { /* selected link */
+a:active {
+  /* selected link */
   color: green;
 }
 
@@ -91,7 +97,6 @@ a:focus {
   text-decoration: none;
 }
 */
-
 /*CSS code for the button class*/
 .button {
   display: inline-block;
@@ -117,7 +122,6 @@ a:focus {
   text-decoration: none;
 }
 */
-
 /*button rules for the mailto button*/
 .button.contact {
   -webkit-border-radius: 0;
@@ -133,7 +137,6 @@ a:focus {
 }
 
 /*button class hover and active state*/
-
 .button.contact:hover {
   color: #bcbcbc;
 }
@@ -141,19 +144,18 @@ a:focus {
 /*--------------------------------------------End Section---------------------------------------------*/
 /*-------------------------------------------Start Section---------------------------------------------*/
 /*stye the page sections*/
-
 /*style the <header> element*/
 header {
   background-color: #F2F3F4;
   text-align: center;
   padding: 10px 0;
   position: relative;
-  box-shadow:rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 /*style the logo*/
 header .logo {
-  max-width: 250px;
+  max-width: 150px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -163,22 +165,49 @@ nav {
   display: inline-block;
 }
 
-nav > ul {
+nav>ul {
   list-style-type: none;
   padding: 0;
 }
 
-nav > ul > li {
+nav>ul>li {
   display: inline-block;
 }
 
-nav > ul > li > a {
+nav>ul>li>a {
   padding: 0 15px;
   text-transform: uppercase;
   font-weight: 700;
   color: #4a4a4a;
 }
 
+.navtoggle, .navtoggle.responsive {
+  position: relative;
+}
+
+.navtoggle li .icon {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-size: 20px;
+}
+
+.navtoggle.responsive li  {
+  display: block;
+}
+
+.navtoggle.responsive nav {
+  padding: 24px 0 0;
+}
+.navtoggle.responsive li  {
+  display: block;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,127,80,0.5);
+}
+
+.navtoggle.responsive li:last-child  {
+  padding: 0 0 10px;
+}
 
 
 #hero {
@@ -194,13 +223,11 @@ nav > ul > li > a {
 }
 
 #contact {
-    background-color: #f2f2f2;
-    padding: 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
-
 /*Style the social icons*/
-
 .social {
   list-style-type: none;
   padding: 0;
@@ -221,17 +248,19 @@ nav > ul > li > a {
 /*--------------------------------------------End Section---------------------------------------------*/
 /*-------------------------------------------Start Section---------------------------------------------*/
 /* Layout styling */
-
 .container {
   padding: 0 15px;
 }
 
 .row {
-  margin: 25px 0; /* 25px top and bottom, 0 left and right */
+  margin: 25px 0;
+  /* 25px top and bottom, 0 left and right */
   /*border-bottom: 1px solid #4a4a4a;*/
 }
 
-#work .row { padding-bottom: 20px; }
+#work .row {
+  padding-bottom: 20px;
+}
 
 /*--------------------------------------------End Section---------------------------------------------*/
 /*-------------------------------------------Start Section---------------------------------------------*/
@@ -243,9 +272,17 @@ nav > ul > li > a {
 }
 
 @keyframes color-change {
-  0% {fill: #edc655;}
-  50% {fill: #fcffad;}
-  100% {fill: #f76414;}
+  0% {
+    fill: #edc655;
+  }
+
+  50% {
+    fill: #fcffad;
+  }
+
+  100% {
+    fill: #f76414;
+  }
 }
 
 .sun {
@@ -261,10 +298,14 @@ nav > ul > li > a {
   animation: 4s color-change infinite alternate linear;
 }
 */
-
 @keyframes cloud-move {
-  from {transform: translate(0,50px);}
-  to {transform: translate(200px,50px);}
+  from {
+    transform: translate(0, 50px);
+  }
+
+  to {
+    transform: translate(200px, 50px);
+  }
 }
 
 .cloud-front {
@@ -280,19 +321,23 @@ nav > ul > li > a {
   animation: 30s cloud-move infinite alternate linear;
 }
 */
-
 @keyframes cloud-move-reverse {
-  from {transform: translate(446px,48px);}
-  to {transform: translate(100px, 48px);}
+  from {
+    transform: translate(446px, 48px);
+  }
+
+  to {
+    transform: translate(100px, 48px);
+  }
 }
 
 .cloud-back {
   animation: 34s cloud-move-reverse infinite alternate linear;
 }
+
 /*--------------------------------------------End Section---------------------------------------------*/
 /*-------------------------------------------Start Section---------------------------------------------*/
 /*Media Queries*/
-
 /*clear page flow*/
 .row::after {
   content: "";
@@ -331,6 +376,14 @@ Medium devices (640px and larger)
 
 }
 
+.navtoggle li:not(:last-child) {
+  display: inline-block;
+}
+
+.navtoggle li:last-child {
+  display: none;
+}
+
 
 /* ==============================
 Large devices (1024px or larger)
@@ -341,6 +394,7 @@ Large devices (1024px or larger)
     margin-left: auto;
     margin-right: auto;
   }
+
   .col-lg-7 {
     width: 60%;
   }
@@ -354,15 +408,17 @@ Large devices (1024px or larger)
     float: left;
     padding-bottom: 40px;
   }
+
   .col-lg-8 {
     width: 40%;
     float: right;
   }
 
-   #about-page .col-md-6 {
-     width: 100%;
+  #about-page .col-md-6 {
+    width: 100%;
   }
 }
+
 
 /* ==============================
 Extra-large devices (1920px or larger)
