@@ -374,6 +374,7 @@ Medium devices (640px and larger)
     padding-bottom: 40px;
   }
 
+.navtoggle li:not(:last-child) {display: none;}
 
 .navtoggle li:not(:last-child) {
   display: inline-block;
